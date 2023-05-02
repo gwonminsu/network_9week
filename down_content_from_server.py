@@ -1,7 +1,9 @@
 import argparse
 import httplib2
+import urllib
+import urllib.request
 
-HOST = 'ww.python.org'
+HOST = 'http://www.python.org'
 PATH = '/'
 
 class HTTPClient:
@@ -31,4 +33,4 @@ if __name__ == "__main__":
     given_args = parser.parse_args()
     host, path = given_args.host, given_args.path
     client = HTTPClient(host)
-    print(f'{client.fetch_by_requests()}')
+    print(client.fetch_by_urllib())
